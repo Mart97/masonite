@@ -10,4 +10,9 @@ class UserModelProvider(Provider):
         self.application.bind('User', User)
 
     def boot(self, user: User):
-        print("Boot working on each Request", user)
+        providers_list = self.application.providers.__str__().split(', ')
+        userinContainer = User.find(1)
+        print(userinContainer.name)
+        #for p in providers_list:
+        #    print(p)
+        #print("UsrModelProvider(Provider)@boot working on each Request", user)
